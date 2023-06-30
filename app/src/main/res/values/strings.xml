@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Flip Image</string>
+    <string name="select_image">Click here \n And Select Your image</string>
+    <string name="save">Save</string>
+</resources>
