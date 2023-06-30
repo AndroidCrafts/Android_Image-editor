@@ -17,7 +17,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     private Bitmap image;
     private Bitmap editedImage;
     private boolean flipped = false;
-    private Matrix matrix = new Matrix();
+    private final Matrix matrix = new Matrix();
     private ActivityEditBinding b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
