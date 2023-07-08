@@ -39,7 +39,8 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
 
 //        TODO:// Save Image
         b.saveBtn.setOnClickListener(v -> {
-            MediaStore.Images.Media.insertImage(getContentResolver(), editedImage, "flippedImage.jpg", "Image Flipped");
+            MediaStore.Images.Media.insertImage(getContentResolver(),
+                    editedImage, "flippedImage.jpg", "Image Flipped");
             Toast.makeText(this, "Image Saved Successfully", Toast.LENGTH_SHORT).show();
         });
     }
@@ -58,25 +59,12 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        //TODO: Flip Image
-        if(id == b.flipImage.getId()){
-            if(!flipped){
-                matrix.preScale(-1, 1);
-                flipped = false;
-            }else {
-                matrix.preScale(1, 1);
-                flipped = true;
-            }
-            editedImage = Bitmap.createBitmap(this.image, 0, 0, image.getWidth(), image.getHeight(), matrix, true);
-            b.selectedImage.setImageBitmap(editedImage);
-        }
 
 //        TODO: Rotate Image
-        else if(id == b.rotateImage.getId()){
             matrix.postRotate(90);
-            editedImage = Bitmap.createBitmap(this.image, 0, 0, image.getWidth(), image.getHeight(), matrix, true);
+            editedImage = Bitmap.createBitmap(this.image, 0, 0,
+                    image.getWidth(), image.getHeight(), matrix, true);
             b.selectedImage.setImageBitmap(editedImage);
-        }
 
     }
 }

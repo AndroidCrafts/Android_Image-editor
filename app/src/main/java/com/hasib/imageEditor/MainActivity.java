@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         ConstraintLayout mainLayout = findViewById(R.id.mainLayout);
         mainLayout.setOnClickListener(v -> {
-            Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(galleryIntent, REQUEST_CODE);
         });
     }
