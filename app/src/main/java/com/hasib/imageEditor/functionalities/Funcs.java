@@ -47,19 +47,22 @@ public class Funcs {
 //    TODO: GrayScale filter
     public static Bitmap filter(Bitmap image){
         Mat matImage = new Mat();
-        Utils.bitmapToMat(image, matImage);
+        Utils.bitmapToMat(image, matImage); // convert Bitmap to mat
 
-        Mat filter = new Mat();
-        Imgproc.cvtColor(matImage, filter, Imgproc.COLOR_BGR2GRAY);
+        Mat filter = new Mat(); //mat object to store grayScale image
+        Imgproc.cvtColor(matImage, filter, Imgproc.COLOR_BGR2GRAY); //convert image to grayscale
 
-        MatOfInt params = new MatOfInt(Imgcodecs.IMWRITE_JPEG_QUALITY, 100);
-        MatOfByte buffer  = new MatOfByte();
-        Imgcodecs.imencode(".jpg", filter, buffer, params);
+//        MatOfInt params = new MatOfInt(Imgcodecs.IMWRITE_JPEG_QUALITY, 100); //set jpeg quality
+//        MatOfByte buffer  = new MatOfByte(); //buffer to store image data
+//        Imgcodecs.imencode(".jpg", filter, buffer, params); //encode the grayScale image to jpg
+//
+//
+//        byte[] byteArray = buffer.toArray(); //convert encoded image to byte array
 
+//        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length); //convert the byteArray to bitmap and return it
 
-        byte[] byteArray = buffer.toArray();
-        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-
+        Utils.matToBitmap(filter, image);
+        return image;
 
     }
 
