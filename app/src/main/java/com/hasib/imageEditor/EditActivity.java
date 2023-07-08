@@ -44,6 +44,11 @@ public class EditActivity extends AppCompatActivity {
             editedImage = Funcs.rotateImage(image);
             b.selectedImage.setImageBitmap(editedImage);
         });
+//        Filter btn
+        b.filter.setOnClickListener(v -> {
+            editedImage = Funcs.filter(image);
+            b.selectedImage.setImageBitmap(editedImage);
+        });
 
 //        TODO:// Save Image
         b.saveBtn.setOnClickListener(v -> {

@@ -6,6 +6,13 @@ import android.graphics.Matrix;
 
 import com.hasib.imageEditor.MainActivity;
 
+import org.opencv.android.Utils;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfInt;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -38,5 +45,22 @@ public class Funcs {
 
 
 //    TODO: GrayScale filter
+    public static Bitmap filter(Bitmap image){
+        Mat matImage = new Mat();
+        Utils.bitmapToMat(image, matImage);
+
+        Mat filter = new Mat();
+        Imgproc.cvtColor(matImage, filter, Imgproc.COLOR_BGR2GRAY);
+
+        MatOfInt params = new MatOfInt(Imgcodecs.IMWRITE_JPEG_QUALITY, 100);
+        MatOfByte buffer  = new MatOfByte();
+        Imgcodecs.imencode(".jpg", filter, buffer, params);
+
+
+        byte[] byteArray = buffer.toArray();
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+
+    }
 
 }
