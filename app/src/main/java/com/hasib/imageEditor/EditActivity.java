@@ -10,6 +10,8 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Toast;
 import com.hasib.flipimage.databinding.ActivityEditBinding;
+import com.hasib.imageEditor.functionalities.Funcs;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -34,11 +36,11 @@ public class EditActivity extends AppCompatActivity {
 
 //        Flip Button
         b.flipImage.setOnClickListener(v -> {
-//           b.selectedImage.setImageBitmap();
+           b.selectedImage.setImageBitmap(Funcs.flipImage(image));
         });
 //        Rotate Button
         b.rotateImage.setOnClickListener(v -> {
-
+            b.selectedImage.setImageBitmap(Funcs.rotateImage(image));
         });
 
 //        TODO:// Save Image

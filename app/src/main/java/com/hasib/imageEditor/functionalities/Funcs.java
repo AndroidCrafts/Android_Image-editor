@@ -1,7 +1,13 @@
 package com.hasib.imageEditor.functionalities;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+
+import com.hasib.imageEditor.MainActivity;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Funcs {
     private static boolean flipped = false;
