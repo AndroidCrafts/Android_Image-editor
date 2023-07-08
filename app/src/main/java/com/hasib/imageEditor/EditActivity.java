@@ -36,11 +36,13 @@ public class EditActivity extends AppCompatActivity {
 
 //        Flip Button
         b.flipImage.setOnClickListener(v -> {
-           b.selectedImage.setImageBitmap(Funcs.flipImage(image));
+            editedImage = Funcs.flipImage(image);
+           b.selectedImage.setImageBitmap(editedImage);
         });
 //        Rotate Button
         b.rotateImage.setOnClickListener(v -> {
-            b.selectedImage.setImageBitmap(Funcs.rotateImage(image));
+            editedImage = Funcs.rotateImage(image);
+            b.selectedImage.setImageBitmap(editedImage);
         });
 
 //        TODO:// Save Image
