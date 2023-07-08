@@ -46,30 +46,34 @@
 
     <ImageButton
         android:id="@+id/rotate_image"
-        android:background="?attr/selectableItemBackgroundBorderless"
         style="@style/button_style"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
         android:src="@drawable/baseline_rotate_right_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+
+
+    <ImageButton
+        android:id="@+id/flip_image"
+        style="@style/button_style"
+        android:src="@drawable/baseline_flip_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rotate_image"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription" />
 
     <ImageButton
-        android:id="@+id/flip_image"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:id="@+id/filter"
         style="@style/button_style"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/baseline_flip_24"
+        android:src="@drawable/baseline_filter_alt_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/rotate_image"
         tools:ignore="ContentDescription" />
 
 

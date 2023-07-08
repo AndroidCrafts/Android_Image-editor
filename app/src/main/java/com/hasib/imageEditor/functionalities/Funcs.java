@@ -35,4 +35,8 @@ public class Funcs {
         return Bitmap.createBitmap(image, 0, 0,
                 image.getWidth(), image.getHeight(), matrix, true);
     }
+
+
+//    TODO: GrayScale filter
+
 }
