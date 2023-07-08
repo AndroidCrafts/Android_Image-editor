@@ -13,7 +13,7 @@ import com.hasib.flipimage.databinding.ActivityEditBinding;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class EditActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditActivity extends AppCompatActivity {
     private Bitmap image;
     private Bitmap editedImage;
     private boolean flipped = false;
@@ -33,9 +33,13 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         getSelectedImage();
 
 //        Flip Button
-        b.flipImage.setOnClickListener(this);
+        b.flipImage.setOnClickListener(v -> {
+//           b.selectedImage.setImageBitmap();
+        });
 //        Rotate Button
-        b.rotateImage.setOnClickListener(this);
+        b.rotateImage.setOnClickListener(v -> {
+
+        });
 
 //        TODO:// Save Image
         b.saveBtn.setOnClickListener(v -> {
@@ -54,14 +58,5 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         }catch (IOException e){
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-
-//        TODO: Rotate Image
-
-
     }
 }
