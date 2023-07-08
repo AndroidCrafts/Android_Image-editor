@@ -61,10 +61,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
 
 //        TODO: Rotate Image
-            matrix.postRotate(90);
-            editedImage = Bitmap.createBitmap(this.image, 0, 0,
-                    image.getWidth(), image.getHeight(), matrix, true);
-            b.selectedImage.setImageBitmap(editedImage);
+
 
     }
 }
