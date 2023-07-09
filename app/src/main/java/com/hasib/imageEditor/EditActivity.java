@@ -1,5 +1,7 @@
 package com.hasib.imageEditor;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
@@ -7,6 +9,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.hasib.flipimage.databinding.ActivityEditBinding;
@@ -47,6 +51,17 @@ public class EditActivity extends AppCompatActivity {
 //        Filter btn
         b.filter.setOnClickListener(v -> {
             editedImage = Funcs.filter(image);
+            b.selectedImage.setImageBitmap(editedImage);
+        });
+
+//        Paint btn
+        b.paint.setOnClickListener(v -> {
+            DisplayMetrics dm = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(dm);
+            double x = dm.widthPixels;
+            double y = dm.heightPixels;
+
+            editedImage = Funcs.paintCircle(image);
             b.selectedImage.setImageBitmap(editedImage);
         });
 

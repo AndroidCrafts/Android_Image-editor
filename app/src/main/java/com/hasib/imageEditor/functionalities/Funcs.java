@@ -3,6 +3,9 @@ package com.hasib.imageEditor.functionalities;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
 import com.hasib.imageEditor.MainActivity;
 
@@ -64,8 +67,9 @@ public class Funcs {
         Mat matImage = new Mat();
         Utils.bitmapToMat(image, matImage);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
 
-        Imgproc.circle(matImage, new Point(230, 60), 100, new Scalar(0, 0, 255), 10);
+        Imgproc.circle(matImage, new Point(550, 550), 200, new Scalar(255, 0, 0), 10);
 
         Utils.matToBitmap(matImage, image);
         return image;
