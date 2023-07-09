@@ -54,7 +54,7 @@ public class EditActivity extends AppCompatActivity {
             b.selectedImage.setImageBitmap(editedImage);
         });
 
-//        Paint btn
+//        Circle btn
         b.circle.setOnClickListener(v -> {
             DisplayMetrics dm = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -62,6 +62,12 @@ public class EditActivity extends AppCompatActivity {
             double y = dm.heightPixels;
 
             editedImage = Funcs.paintCircle(image);
+            b.selectedImage.setImageBitmap(editedImage);
+        });
+
+//        Line btn
+        b.line.setOnClickListener(v -> {
+            editedImage = Funcs.drawLine(image);
             b.selectedImage.setImageBitmap(editedImage);
         });
 

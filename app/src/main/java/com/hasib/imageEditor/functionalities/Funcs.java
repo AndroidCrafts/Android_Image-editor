@@ -62,7 +62,7 @@ public class Funcs {
 
     }
 
-//    TODO: Image Circle
+//    TODO: Draw Circle
     public static Bitmap paintCircle(Bitmap image){
         Mat matImage = new Mat();
         Utils.bitmapToMat(image, matImage);
@@ -75,4 +75,15 @@ public class Funcs {
         return image;
     }
 
+//    TODO: Draw Line
+    public static Bitmap drawLine(Bitmap image) {
+        Mat matImage = new Mat();
+        Utils.bitmapToMat(image, matImage);
+
+        Imgproc.line(matImage, new Point(200, 400), new Point(500, 700), new Scalar(255,255,255), 10);
+
+        Utils.matToBitmap(matImage, image);
+
+        return image;
+    }
 }
