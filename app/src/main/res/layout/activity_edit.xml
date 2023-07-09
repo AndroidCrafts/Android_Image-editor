@@ -55,7 +55,6 @@
         tools:ignore="ContentDescription" />
 
 
-
     <ImageButton
         android:id="@+id/flip_image"
         style="@style/button_style"
@@ -71,10 +70,16 @@
         style="@style/button_style"
         android:src="@drawable/baseline_filter_alt_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toEndOf="@+id/rotate_image"
         tools:ignore="ContentDescription" />
 
+    <ImageButton
+        android:id="@+id/paint"
+        style="@style/button_style"
+        android:src="@drawable/baseline_format_paint_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/filter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
