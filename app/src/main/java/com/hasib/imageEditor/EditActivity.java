@@ -55,7 +55,7 @@ public class EditActivity extends AppCompatActivity {
         });
 
 //        Paint btn
-        b.paint.setOnClickListener(v -> {
+        b.circle.setOnClickListener(v -> {
             DisplayMetrics dm = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(dm);
             double x = dm.widthPixels;
