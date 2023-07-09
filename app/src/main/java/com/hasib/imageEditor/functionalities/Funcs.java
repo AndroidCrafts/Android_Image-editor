@@ -10,6 +10,8 @@ import org.opencv.android.Utils;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.core.MatOfInt;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
@@ -55,6 +57,18 @@ public class Funcs {
         Utils.matToBitmap(filter, image);
         return image;
 
+    }
+
+//    TODO: Image Circle
+    public static Bitmap paintCircle(Bitmap image){
+        Mat matImage = new Mat();
+        Utils.bitmapToMat(image, matImage);
+
+
+        Imgproc.circle(matImage, new Point(230, 60), 100, new Scalar(0, 0, 255), 10);
+
+        Utils.matToBitmap(matImage, image);
+        return image;
     }
 
 }
